@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import { createServer, IncomingMessage, ServerResponse } from 'http';
-import { log } from './logger';
+import { log } from './utils/logger';
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 

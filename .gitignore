@@ -3,6 +3,7 @@
 .env
 .env.*
 *.log
+*/logs
 *.tsbuildinfo
 .DS_Store
 .vscode/
