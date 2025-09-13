@@ -1,4 +1,5 @@
 import { createServer, IncomingMessage, ServerResponse } from 'http';
+import 'dotenv/config';
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
