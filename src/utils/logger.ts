@@ -1,12 +1,9 @@
-import { appendFile, mkdir } from 'fs';
-import { join, dirname } from 'path';
+import { appendFile } from 'fs';
+import { join } from 'path';
+import { initPath } from './init-path';
 
 const LOG_FILE = join(__dirname, '..', 'logs', 'server.log');
-mkdir(dirname(LOG_FILE), { recursive: true }, (err) => {
-  if (err) {
-    console.error('Failed to create log directory:', err);
-  }
-});
+initPath(LOG_FILE);
 
 export function log(message: string): void {
   const timestamp = new Date().toISOString();

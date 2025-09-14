@@ -1,16 +1,10 @@
 import { readFile, writeFile } from 'fs/promises';
-import { writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { Booking } from '../types/bookings';
+import { initPath } from '../utils/init-path';
 
 const BOOKINGS_FILE = join(__dirname, '..', 'data', 'bookings.json');
-try {
-  if (!existsSync(BOOKINGS_FILE)) {
-    writeFileSync(BOOKINGS_FILE, '[]');
-  }
-} catch (err) {
-  console.error('Failed to create bookings file:', err);
-}
+initPath(BOOKINGS_FILE, '[]');
 
 export async function getBookings(): Promise<Booking[]> {
   try {
