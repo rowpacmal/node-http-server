@@ -21,7 +21,7 @@ export async function addBooking(booking: Booking): Promise<void> {
     const bookings = await getBookings();
     bookings.push(booking);
 
-    await writeFile(BOOKINGS_FILE, JSON.stringify(bookings), 'utf-8');
+    await writeFile(BOOKINGS_FILE, JSON.stringify(bookings, null, 2), 'utf-8');
   } catch (err) {
     console.error('Failed to write booking:', err);
   }
